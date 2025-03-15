@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
+const session = require('express-session');
 
 const authController = require('./controllers/auth');
 
@@ -20,10 +21,18 @@ mongoose.connection.on('connected', () => {
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
-
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+    })
+);
 
 app.get('/', (req, res) => {
-    res.status(200).render('index.ejs');
+    res.render('index.ejs', {
+        user: req.session.user,
+    });
 });
 
 app.use('/auth', authController);
