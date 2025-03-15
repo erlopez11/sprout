@@ -7,7 +7,17 @@
 </head>
 <body>
     <%- include('./partials/_navbar.ejs') %>
-    <h1>Sprout</h1>
-    <p>A seed collection app for gardeners</p>
+
+    <% if (user) { %>
+        <h1>Sprout</h1>
+        <p>A seed collection app for gardeners</p>
+        <!-- TODO: Add Link to Plants Index Page -->
+        <a href="">View My Plants</a>
+    <% } else { %>
+        <h1>Sprout</h1>
+        <p>A seed collection app for gardeners</p>
+        <a href="/auth/sign-up">Sign Up</a>
+        <a href="/auth/sign-in">Sign In</a>
+    <% }%>
 </body>
 </html>
