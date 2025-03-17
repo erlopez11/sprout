@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= plant.plantName %></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= plant.plantName %></h1>
+    
+    <p>Planting Season: <%= plant.season %></p>
+    <p>Plant Type: <%= plant.plantType %></p>
+
+    <% if (plant.quantity) { %>
+        <p>Quantity of Seed Packets: <%= plant.quantity %></p>
+    <% } %>
+
+    <% if (plant.notes) { %>
+        <p>Notes: <%= plant.notes %></p>
+    <% } %>
+    <!-- TODO: Add delete url to action -->
+    <form action="" method="post">
+        <button type="submit">Delete Plant</button>
+    </form>
+
+    <!-- TODO: Add edit url -->
+    <a href="">Edit Info</a>
+</body>
+</html>
