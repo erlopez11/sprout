@@ -11,8 +11,7 @@
     <% if (user) { %>
         <h1>Sprout</h1>
         <p>A seed collection app for gardeners</p>
-        <!-- TODO: Add Link to Plants Index Page -->
-        <a href="">View My Plants</a>
+        <a href="/users/<%= user._id %>/plants">View My Plants</a>
     <% } else { %>
         <h1>Sprout</h1>
         <p>A seed collection app for gardeners</p>

@@ -36,7 +36,6 @@ app.use(
 app.use(passUserToView);
 
 app.get('/', (req, res) => {
-    // TODO Remove this and leave as res.render so user can still access homepage?
     if (req.session.user) {
         res.redirect(`/users/${req.session.user._id}/plants`);
     } else {
