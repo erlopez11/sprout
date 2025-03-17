@@ -60,7 +60,7 @@ h1 {
 }
 
 .homeImg {
-    border: 5px solid var(--clr-accentTwo);
+    border: 0.3125rem solid var(--clr-accentTwo);
     border-radius: 50%;
     object-fit: cover;
 }
@@ -73,21 +73,21 @@ h1 {
 
 .linkBtn {
     background-color: var(--clr-accentOne);
-    padding: 8px 50px;
-    border-radius: 20px;
+    padding: 0.5rem 3.125rem;
+    border-radius: 1.25rem;
 }
 .linkBtn:hover {
     background-color: #cc88ff;
 }
 .homeBtnContainer {
-    gap: 30px;
+    gap: 1.875rem;
 }
 .homeBtnContainer a {
     color: var(--clr-dark);
 }
 .signInBtn {
     background-color: transparent;
-    border: 1px solid var(--clr-accentOne);
+    border: 0.0625rem solid var(--clr-accentOne);
 }
 .signInBtn:hover {
     background-color: var(--clr-medium);
@@ -102,10 +102,10 @@ h1 {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 1.25rem;
     }
     .homeTextContainer {
-        gap: 30px;
+        gap: 1.875rem;
     }
     .homeImg {
         width: 60%;
@@ -113,7 +113,7 @@ h1 {
     }
     .homeBtnContainer {
         flex-direction: column;
-        gap: 30px;
+        gap: 1.875rem;
     }
 }
 
@@ -123,13 +123,13 @@ h1 {
         align-items: center;
     }
     .homeImg {
-        width: 250px;
+        width: 15.625rem;
         aspect-ratio: 1;
     }
     .homeTextContainer {
-        gap: 40px;
+        gap: 2.5rem;
     }
     h1 {
-        font-size: 64px;
+        font-size: 4rem;
     }
 }
