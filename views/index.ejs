@@ -8,16 +8,24 @@
 </head>
 <body>
     <%- include('./partials/_navbar.ejs') %>
+    <div class="homeContainer containerMaxWidth flex">
+        <img alt="plant sprouts growing inside a cardboard seed tray" src="../images/sprouts.jpg" class="homeImg">
+        <div class="homeTextContainer flex">
+            <% if (user) { %>
+                <h1>Sprout</h1>
+                <p>A seed collection app for gardeners</p>
+                <a href="/users/<%= user._id %>/plants">View My Plants</a>
+            <% } else { %>
+                <h1>Sprout</h1>
+                <p>A seed collection app for gardeners</p>
+                <div class="homeBtnContainer flex">
+                    <a href="/auth/sign-up" class="linkBtn">Sign Up</a>
+                    <a href="/auth/sign-in" class="linkBtn signInBtn">Sign In</a>
+                </div>
+            <% }%>
+        </div>
+    </div>
 
-    <% if (user) { %>
-        <h1>Sprout</h1>
-        <p>A seed collection app for gardeners</p>
-        <a href="/users/<%= user._id %>/plants">View My Plants</a>
-    <% } else { %>
-        <h1>Sprout</h1>
-        <p>A seed collection app for gardeners</p>
-        <a href="/auth/sign-up">Sign Up</a>
-        <a href="/auth/sign-in">Sign In</a>
-    <% }%>
+
 </body>
 </html>
