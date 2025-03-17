@@ -9,7 +9,11 @@
     <%- include('../partials/_navbar.ejs') %>
     <div>
         <h1>My Seed Collection</h1>
-        <a>Add Plant</a>
+        <a href="/users/<%= user._id %>/plants/new">Add Plant</a>
+
+        <% plants.forEach(plant => { %>
+            <h2><%= plant.plantName %></h2>
+        <% }) %>
     </div>
 </body>
 </html>
