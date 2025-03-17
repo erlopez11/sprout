@@ -20,11 +20,11 @@
         <p>Notes: <%= plant.notes %></p>
     <% } %>
     <!-- TODO: Add delete url to action -->
-    <form action="" method="post">
+    <form action="/users/<%= user._id %>/plants/<%= plant._id %>?_method=DELETE" method="post">
         <button type="submit">Delete Plant</button>
     </form>
 
     <!-- TODO: Add edit url -->
-    <a href="">Edit Info</a>
+    <a href="/users/<%= user._id %>/plants/<%= plant._id %>/edit">Edit Info</a>
 </body>
 </html>
