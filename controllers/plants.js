@@ -30,6 +30,19 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.get('/:plantId', async (req, res) => {
+    try {
+        const loggedInUser = await User.findById(req.session.user._id);
+        const plant = loggedInUser.plants.id(req.params.plantId);
+        res.render('plants/show.ejs', {
+            plant
+        });
+    } catch (error) {
+        console.lof(error);
+        res.redirect('/');
+    }
+});
+
 
 
 
