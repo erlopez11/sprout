@@ -1,23 +1,29 @@
-<nav>
-    <ul>
-        <li>
-            <a href="/">Home</a>
-        </li>
-
-        <% if (user) { %>
+<link rel="stylesheet" href="/css/partials.css">
+<script defer src="/js/script.js"></script>
+<header>
+    <h2>Sprout</h2>
+    <button class="mobile-nav-toggle" aria-expanded="false"></button>
+    <nav>
+        <ul class="primaryNav" data-visible="false">
             <li>
-                <a href="/users/<%= user._id %>/plants">Seed Collection</a>
+                <a href="/">Home</a>
             </li>
-            <li>
-                <a href="/auth/sign-out">Sign Out</a>
-            </li>
-        <% } else { %>
-            <li>
-                <a href="/auth/sign-up">Sign Up</a>
-            </li>
-            <li>
-                <a href="/auth/sign-in">Sign In</a>
-            </li>
-        <% } %>
-    </ul>
-</nav>
+    
+            <% if (user) { %>
+                <li>
+                    <a href="/users/<%= user._id %>/plants">Seed Collection</a>
+                </li>
+                <li>
+                    <a href="/auth/sign-out">Sign Out</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/auth/sign-up">Sign Up</a>
+                </li>
+                <li>
+                    <a href="/auth/sign-in">Sign In</a>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+</header>
