@@ -24,7 +24,7 @@ router.post('/sign-up', async (req, res) => {
         req.body.password = hashedPassword;
 
         await User.create(req.body);
-        //TODO: Redirect to the sign in page after sign up
+
         res.redirect('auth/sign-in.ejs');
     } catch (error) {
         console.log(error);
