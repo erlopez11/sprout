@@ -12,7 +12,9 @@
         <a href="/users/<%= user._id %>/plants/new">Add Plant</a>
 
         <% plants.forEach(plant => { %>
-            <h2><%= plant.plantName %></h2>
+            <h2>
+                <a href="/users/<%= user._id %>/plants/<%= plant._id %>"><%= plant.plantName %></a>
+            </h2>
         <% }) %>
     </div>
 </body>
