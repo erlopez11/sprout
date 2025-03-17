@@ -13,7 +13,7 @@ const plantSchema = new mongoose.Schema({
     plantType: {
         type: String,
         required: true,
-        enum: ['herb', 'veggie', 'fruit', 'flower', 'other']
+        enum: ['herb', 'veggie', 'fruit', 'flower', 'other'],
     },
     quantity: {
         type: Number,
