@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Lilita+One&display=swap');
+
+:root {
+    /* Colors */
+    --clr-dark: #2a4c4e;
+    --clr-medium: #dde469;
+    --clr-light: #eee8ce;
+    --clr-accentOne: #c8d9f5;
+    --clr-accentTwo: #cc88ff;
+
+    /* Font Families */
+    --ff-heading: 'Lilita One', sans-serif;
+    --ff-body: 'Libre Franklin', serif
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-body);
+    color: var(--clr-dark);
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/* ------------------*/
+/* Media Queries     */
+/* ------------------*/
+
+@media (max-width: 559px) {
+    
+}
