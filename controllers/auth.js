@@ -20,12 +20,12 @@ router.post('/sign-up', async (req, res) => {
             return res.send('Password and Confirm Password must match');
         }
 
-        const hashedPassword = bycrypt.hashSync(req.body.password, 12);
+        const hashedPassword = bcrypt.hashSync(req.body.password, 12);
         req.body.password = hashedPassword;
 
         await User.create(req.body);
         //TODO: Redirect to the sign in page after sign up
-        res.redirect('/');
+        res.redirect('auth/sign-in.ejs');
     } catch (error) {
         console.log(error);
         res.redirect('/');
