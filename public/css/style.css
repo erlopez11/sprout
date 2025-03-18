@@ -105,12 +105,35 @@ input {
     border-radius: 1.25rem;
     padding: 0.5rem 1.25rem;
     width: 15.625rem;
+    font-family: var(--ff-body);
 }
 
 input:focus {
     outline: none;
     border: 0.0625rem solid var(--clr-accentTwo);
 }
+select {
+    border: 0.0625rem solid var(--clr-dark);
+    border-radius: 20px;
+    padding: 10px;
+    color: var(--clr-dark);
+}
+select:focus {
+    outline: none;
+    border: 0.0625rem solid var(--clr-accentTwo);
+}
+
+textarea {
+    font-family: var(--ff-body);
+    outline: none;
+    border-radius: 4px;
+    border: 0.0625rem solid var(--clr-dark);
+    padding: 5px;
+}
+textarea:focus {
+    border: 0.0625rem solid var(--clr-accentTwo);
+}
+
 
 /* Sign Up/Sign In */
 .authContainer {
@@ -233,6 +256,26 @@ input:focus {
     border: 0.0625rem solid var(--clr-accentOne);
     color: var(--clr-dark);
     text-align: center;
+}
+/* New/Edit Pages */
+.newEditContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    gap: 2.5rem;
+}
+.deleteEditBtn {
+    background-color: var(--clr-accentOne);
+    color: var(--clr-dark);
+    padding: 0.5rem 3.125rem;
+    border-radius: 1.25rem;
+    transition: 0.5s;
+    border: none;
+    margin-top: 25px;
+}
+.deleteEditBtn:hover {
+    background-color: var(--clr-accentTwo);
 }
 
 /* ------------------*/
