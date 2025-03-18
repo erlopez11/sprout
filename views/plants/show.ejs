@@ -3,26 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title><%= plant.plantName %></title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= plant.plantName %></h1>
-    
-    <p>Planting Season: <%= plant.season %></p>
-    <p>Plant Type: <%= plant.plantType %></p>
-
-    <% if (plant.quantity) { %>
-        <p>Quantity of Seed Packets: <%= plant.quantity %></p>
-    <% } %>
-
-    <% if (plant.notes) { %>
-        <p>Notes: <%= plant.notes %></p>
-    <% } %>
-    <form action="/users/<%= user._id %>/plants/<%= plant._id %>?_method=DELETE" method="post">
-        <button type="submit">Delete Plant</button>
-    </form>
-
-    <a href="/users/<%= user._id %>/plants/<%= plant._id %>/edit">Edit Info</a>
+    <div class="showContainer containerMaxWidth flex">
+        <div class="showImg flex">
+            <% if (plant.plantType === 'herb') { %>
+                <img src="/images/herbs.jpg" alt="herbs growing in carton planters">
+            <% } else if (plant.plantType === 'veggie') { %>
+                <img src="/images/veggie.jpg" alt="tomaoes in crate">
+            <% } else if (plant.plantType === 'fruit') { %>
+                <img src="/images/fruit.jpg" alt="strawberries hanging from planter">
+            <% } else if (plant.plantType === 'flower') { %>
+                <img src="/images/flowers.jpg" alt="groups of flowers in the sunlight">
+            <% } else if (plant.plantType === 'other') { %>
+                <img src="/images/other.jpg" alt="a garden box with herbs and lettuce">
+            <% }%>
+        </div>
+        <div class="showText flex">
+            <h1><%= plant.plantName %></h1>
+            
+            <p><span class="bold">Planting Season:</span> <%= plant.season %></p>
+            <p><span class="bold">Plant Type:</span> <%= plant.plantType %></p>
+        
+            <% if (plant.quantity) { %>
+                <p><span class="bold">Quantity of Seed Packets:</span> <%= plant.quantity %></p>
+            <% } %>
+        
+            <% if (plant.notes) { %>
+                <p><span class="bold">Notes:</span> <%= plant.notes %></p>
+            <% } %>
+            <div class="showBtnsContainer flex">
+                <form action="/users/<%= user._id %>/plants/<%= plant._id %>?_method=DELETE" method="post">
+                    <button class="showBtn deleteBtn" type="submit">Delete Plant</button>
+                </form>
+            
+                <a class="showBtn editBtn" href="/users/<%= user._id %>/plants/<%= plant._id %>/edit">Edit Info</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
