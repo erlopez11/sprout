@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Join Sprout</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Join Sprout</h1>
-
-    <form action="/auth/sign-up" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"/>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"/>
-
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword"/>
-
-        <button type="submit">Sign Up</button>
-    </form>
+    <div class="authContainer flex">
+        <h1>Join Sprout</h1>
+    
+        <form action="/auth/sign-up" method="post" class="flex">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"/>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"/>
+    
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword"/>
+    
+            <button type="submit" class="authBtn">Sign Up</button>
+        </form>
+    </div>
 </body>
 </html>
