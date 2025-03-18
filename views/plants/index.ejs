@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>My Seed Collection</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <div>
-        <h1>My Seed Collection</h1>
-        <a href="/users/<%= user._id %>/plants/new">Add Plant</a>
-
-        <% plants.forEach(plant => { %>
-            <h2>
-                <a href="/users/<%= user._id %>/plants/<%= plant._id %>"><%= plant.plantName %></a>
-            </h2>
-        <% }) %>
+    <div class="plantIdx containerMaxWidth flex">
+        <div class="plantIdxHeading flex">
+            <h1>My Seed Collection</h1>
+            <a class="newBtn" href="/users/<%= user._id %>/plants/new">Add Plant</a>
+        </div>
+        <ul class="plantCardContainer flex">
+            <% plants.forEach(plant => { %>
+                <li class="card">
+                    <div class="plantImg">
+                        <img src="/images/veggie.jpg">
+                    </div>
+                    <div class="plantText">
+                        <h2>
+                            <a href="/users/<%= user._id %>/plants/<%= plant._id %>"><%= plant.plantName %></a>
+                        </h2>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
     </div>
 </body>
 </html>
