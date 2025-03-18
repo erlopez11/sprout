@@ -265,7 +265,7 @@ textarea:focus {
     height: 90vh;
     gap: 2.5rem;
 }
-.deleteEditBtn {
+.newEditBtn {
     background-color: var(--clr-accentOne);
     color: var(--clr-dark);
     padding: 0.5rem 3.125rem;
@@ -274,7 +274,7 @@ textarea:focus {
     border: none;
     margin-top: 25px;
 }
-.deleteEditBtn:hover {
+.newEditBtn:hover {
     background-color: var(--clr-accentTwo);
 }
 
