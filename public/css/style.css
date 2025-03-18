@@ -75,6 +75,7 @@ h1 {
     background-color: var(--clr-accentOne);
     padding: 0.5rem 3.125rem;
     border-radius: 1.25rem;
+    transition: 0.5s;
 }
 .linkBtn:hover {
     background-color: #cc88ff;
@@ -88,9 +89,10 @@ h1 {
 .signInBtn {
     background-color: transparent;
     border: 0.0625rem solid var(--clr-accentOne);
+    transition: 0.5s;
 }
 .signInBtn:hover {
-    background-color: var(--clr-medium);
+    background-color: var(--clr-accentTwo);
 }
 
 /* Forms */
@@ -126,6 +128,7 @@ input:focus {
     border: none;
     padding: 0.625rem;
     margin-top: 1.25rem;
+    transition: 0.4s;
 }
 
 .authBtn:hover {
@@ -145,6 +148,16 @@ input:focus {
     border-radius: 10px;
     width: 152px;
     height: 202px;
+    transition: 0.4s;
+    position: relative;
+}
+.card a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }
 .card:hover {
     box-shadow: 0 4px 0 rgba(42, 76, 78, 0.6), 0 6px 20px 0 rgba(42, 76, 78, 0.5);
