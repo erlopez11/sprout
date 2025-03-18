@@ -18,7 +18,17 @@
             <% plants.forEach(plant => { %>
                 <li class="card">
                     <div class="plantImg">
-                        <img src="/images/veggie.jpg">
+                        <% if (plant.plantType === 'herb') { %>
+                            <img src="/images/herbs.jpg">
+                        <% } else if (plant.plantType === 'veggie') { %>
+                            <img src="/images/veggie.jpg">
+                        <% } else if (plant.plantType === 'fruit') { %>
+                            <img src="/images/fruit.jpg">
+                        <% } else if (plant.plantType === 'flower') { %>
+                            <img src="/images/flowers.jpg">
+                        <% } else if (plant.plantType === 'other') { %>
+                            <img src="/images/other.jpg">
+                        <% }%>
                     </div>
                     <div class="plantText">
                         <h2>
