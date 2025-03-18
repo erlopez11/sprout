@@ -47,6 +47,9 @@ img {
 .flex {
     display: flex;
 }
+.bold {
+    font-weight: 600;
+}
 
 
 /* HOMEPAGE */
@@ -78,7 +81,7 @@ h1 {
     transition: 0.5s;
 }
 .linkBtn:hover {
-    background-color: #cc88ff;
+    background-color: var(--clr-accentTwo);
 }
 .homeBtnContainer {
     gap: 1.875rem;
@@ -89,10 +92,6 @@ h1 {
 .signInBtn {
     background-color: transparent;
     border: 0.0625rem solid var(--clr-accentOne);
-    transition: 0.5s;
-}
-.signInBtn:hover {
-    background-color: var(--clr-accentTwo);
 }
 
 /* Forms */
@@ -189,6 +188,53 @@ input:focus {
     background-color: var(--clr-accentTwo);
 }
 
+/* Show Page: Ind Plant */
+.showContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+.showImg img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+.showText {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.showBtnsContainer {
+    margin-top: 40px;
+    gap: 15px;
+}
+.showBtn {
+    background-color: var(--clr-accentOne);
+    padding: 0.5rem 3.125rem;
+    border-radius: 1.25rem;
+    transition: 0.5s;
+}
+.showBtn:hover {
+    background-color: #cc88ff;
+}
+.showImg {
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.showText p:not(:first-child) {
+    margin-top: 12px;
+}
+.deleteBtn {
+    border: none;
+    color: var(--clr-dark);
+}
+.editBtn {
+    background-color: transparent;
+    border: 0.0625rem solid var(--clr-accentOne);
+    color: var(--clr-dark);
+    text-align: center;
+}
+
 /* ------------------*/
 /* Media Queries     */
 /* ------------------*/
@@ -230,6 +276,13 @@ input:focus {
         font-size: 12px;
         padding: 5px 25px;
     }
+    .showImg img {
+        width: 50%;
+        aspect-ratio: 1;
+    }
+    .showBtn {
+        font-size: 12px;
+    }
 }
 
 @media (min-width: 660px) {
@@ -261,5 +314,19 @@ input:focus {
     }
     .newBtn {
         padding: 8px 30px;
+    }
+    .showImg img {
+        width: 300px;
+        aspect-ratio: 1;
+    }
+    .showText {
+        flex-direction: column;
+    }
+    .showBtnsContainer {
+        justify-content: center;
+        align-items: center;
+    }
+    .deleteBtn {
+        font-size: 16px;
     }
 }
