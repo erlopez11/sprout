@@ -7,6 +7,7 @@ const session = require('express-session');
 
 const isSignedIn = require('./middleware/is-signed-in');
 const passUserToView = require('./middleware/pass-user-to-view');
+const isMessageStored = require('./middleware/is-message-stored');
 
 const authController = require('./controllers/auth');
 const plantsController = require('./controllers/plants');
@@ -34,6 +35,7 @@ app.use(
     })
 );
 
+app.use(isMessageStored);
 app.use(passUserToView);
 
 app.get('/', (req, res) => {
@@ -47,6 +49,11 @@ app.get('/', (req, res) => {
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/plants', plantsController);
+
+
+app.get('*', (req, res) => {
+    res.render('error.ejs', {msg: 'Page not found'});
+});
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`);
