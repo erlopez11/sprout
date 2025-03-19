@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
         res.redirect(`/users/${loggedInUser._id}/plants`);
     } catch (error) {
         console.log(error);
-        res.redirect('/');
+        res.render('error.ejs', {msg: 'An error occured. Please try again.'});
     }
 });
 
@@ -39,7 +39,7 @@ router.get('/:plantId', async (req, res) => {
             plant
         });
     } catch (error) {
-        console.lof(error);
+        console.log(error);
         res.redirect('/');
     }
 });
@@ -80,7 +80,7 @@ router.put('/:plantId', async (req, res) => {
         res.redirect(`/users/${loggedInUser._id}/plants/${req.params.plantId}`)
     } catch (error) {
         console.log(error);
-        res.redirect('/');
+        res.render('error.ejs', {msg: 'An error occured. Please try again.'});
     }
 });
 
