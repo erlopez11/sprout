@@ -13,10 +13,10 @@
     
         <form class="flex bold" action="/users/<%= user._id %>/plants" method="post">
             <label for="plantName">Plant Name</label>
-            <input type="text" id="plantName" name="plantName"/>
+            <input type="text" id="plantName" name="plantName" required/>
     
             <label for="season">Planting Season</label>
-            <select id="season" name="season">
+            <select id="season" name="season" required>
                 <option value="summer">Summer</option>
                 <option value="fall">Fall</option>
                 <option value="winter">Winter</option>
@@ -24,7 +24,7 @@
             </select>
     
             <label for="plantType">Plant Type</label>
-            <select id="plantType" name="plantType">
+            <select id="plantType" name="plantType" required>
                 <option value="herb">Herb</option>
                 <option value="veggie">Veggie</option>
                 <option value="fruit">Fruit</option>

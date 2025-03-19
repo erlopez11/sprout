@@ -13,10 +13,10 @@
     
         <form class="flex" action="/users/<%= user._id %>/plants/<%= plant._id %>?_method=PUT" method="post">
             <label for="plantName">Plant Name</label>
-            <input type="text" id="plantName" name="plantName" value="<%= plant.plantName %>"/>
+            <input type="text" id="plantName" name="plantName" value="<%= plant.plantName %> required"/>
     
             <label for="season">Planting Season</label>
-            <select id="season" name="season">
+            <select id="season" name="season" required>
                 <option value="summer" <%= plant.season === 'summer' ? 'selected' : '' %>>Summer</option>
                 <option value="fall" <%= plant.season === 'fall' ? 'selected' : '' %>>Fall</option>
                 <option value="winter" <%= plant.season === 'winter' ? 'selected' : '' %>>Winter</option>
@@ -24,7 +24,7 @@
             </select>
     
             <label for="plantType">Plant Type</label>
-            <select id="plantType" name="plantType">
+            <select id="plantType" name="plantType" required>
                 <option value="herb" <%= plant.plantType === 'herb' ? 'selected' : '' %>>Herb</option>
                 <option value="veggie" <%= plant.plantType === 'veggie' ? 'selected' : '' %>>Veggie</option>
                 <option value="fruit" <%= plant.plantType === 'fruit' ? 'selected' : '' %>>Fruit</option>
