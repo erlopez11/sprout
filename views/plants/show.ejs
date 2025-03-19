@@ -9,6 +9,11 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <div class="showContainer containerMaxWidth flex">
+        <% if (typeof message !== 'undefined') { %>
+            <div class="flashMessage">
+                <p><%= message %></p>
+            </div>
+        <% } %>
         <div class="showImg flex">
             <% if (plant.plantType === 'herb') { %>
                 <img src="/images/herbs.jpg" alt="herbs growing in carton planters">

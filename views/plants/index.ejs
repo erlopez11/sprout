@@ -9,7 +9,13 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+
     <div class="plantIdx containerMaxWidth flex">
+        <% if (typeof message !== 'undefined') { %>
+            <div class="flashMessage">
+                <p><%= message %></p>
+            </div>
+        <% } %>
         <div class="plantIdxHeading flex">
             <h1>My Seed Collection</h1>
             <a class="newBtn" href="/users/<%= user._id %>/plants/new">Add Plant</a>
