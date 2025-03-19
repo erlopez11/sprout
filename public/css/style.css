@@ -59,6 +59,9 @@ h1 {
 }
 
 .homeContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 90vh;
 }
 
@@ -278,15 +281,46 @@ textarea:focus {
     background-color: var(--clr-accentTwo);
 }
 
+/* Error Page */
+.errorContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    gap: 20px;
+}
+
+.errorBackBtn {
+    background-color: var(--clr-accentOne);
+    color: var(--clr-dark);
+    padding: 0.5rem 3.125rem;
+    border-radius: 1.25rem;
+    transition: 0.5s;
+    border: none;
+    margin-top: 25px;
+}
+.errorBackBtn:hover {
+    background-color: var(--clr-accentTwo);
+}
+
+.errorImg {
+    border-radius: 50%;
+
+}
+
+/* Flash Message */
+.flashMessage {
+    background-color: var(--clr-accentTwo);
+    padding: 12px;
+    border-radius: 10px;
+}
+
 /* ------------------*/
 /* Media Queries     */
 /* ------------------*/
 
 @media (max-width: 659px) {
     .homeContainer {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         gap: 1.25rem;
     }
     .homeTextContainer {
@@ -319,7 +353,8 @@ textarea:focus {
         font-size: 12px;
         padding: 5px 25px;
     }
-    .showImg img {
+    .showImg img,
+    .errorImg {
         width: 50%;
         aspect-ratio: 1;
     }
@@ -330,8 +365,7 @@ textarea:focus {
 
 @media (min-width: 660px) {
     .homeContainer {
-        justify-content: space-evenly;
-        align-items: center;
+        gap: 25px;
     }
     .homeImg {
         width: 15.625rem;
@@ -358,7 +392,8 @@ textarea:focus {
     .newBtn {
         padding: 8px 30px;
     }
-    .showImg img {
+    .showImg img,
+    .errorImg {
         width: 300px;
         aspect-ratio: 1;
     }
