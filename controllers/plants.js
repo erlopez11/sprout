@@ -23,6 +23,7 @@ router.post('/', async (req, res) => {
         const loggedInUser = await User.findById(req.session.user._id);
         loggedInUser.plants.push(req.body); 
         await loggedInUser.save();
+        req.session.message = 'New Plant Added';
         res.redirect(`/users/${loggedInUser._id}/plants`);
     } catch (error) {
         console.log(error);
@@ -48,6 +49,7 @@ router.delete('/:plantId', async (req, res) => {
         const loggedInUser = await User.findById(req.session.user._id);
         loggedInUser.plants.id(req.params.plantId).deleteOne();
         await loggedInUser.save();
+        req.session.message = 'Delete Successful'
         res.redirect(`/users/${loggedInUser._id}/plants`);
     } catch (error) {
         console.log(error);
@@ -74,6 +76,7 @@ router.put('/:plantId', async (req, res) => {
         const plant = loggedInUser.plants.id(req.params.plantId);
         plant.set(req.body);
         await loggedInUser.save();
+        req.session.message = 'Update Successful';
         res.redirect(`/users/${loggedInUser._id}/plants/${req.params.plantId}`)
     } catch (error) {
         console.log(error);
