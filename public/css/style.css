@@ -166,14 +166,25 @@ textarea:focus {
     align-items: center;
     margin-bottom: 40px;
 }
+.plantIdxContainer {
+    flex-direction: column;
+    width: 100%;
+    gap: 50px
+}
+.plantIdxSection {
+    width: 100%;
+    height: auto;
+
+}
+.plantIdxSection h2 {
+    margin-bottom: 20px;
+}
 .plantCardContainer {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 150px);
+    grid-template-columns: repeat(auto-fill, 150px); 
 }
-/* .plantCardContainer {
-    flex-wrap: wrap;
-} */
+
 .card {
     border-radius: 10px;
     width: 152px;
@@ -348,6 +359,11 @@ textarea:focus {
         align-items: center;
         gap: 20px;
         margin-bottom: 50px;
+    }
+    .plantIdxSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .plantCardContainer {
         justify-content: center;
