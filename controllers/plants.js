@@ -5,7 +5,7 @@ const User = require('../models/user');
 router.get('/', async (req, res) => {
     try {
         const loggedInUser = await User.findById(req.session.user._id);
-        res.render('plants/index.ejs', {
+        res.status(200).render('plants/index.ejs', {
             plants: loggedInUser.plants,
         });
     } catch (error) {
@@ -17,9 +17,7 @@ router.get('/', async (req, res) => {
 router.get('/season', async (req, res) => {
     try {
         const loggedInUser = await User.findById(req.session.user._id);
-        console.log(req.body);
-        res.render('plants/seasonIdx.ejs', {
-            season: req.body,
+        res.status(200).render('plants/seasonIdx.ejs', {
             plants: loggedInUser.plants,
         });
     } catch (error) {
@@ -50,7 +48,7 @@ router.get('/:plantId', async (req, res) => {
     try {
         const loggedInUser = await User.findById(req.session.user._id);
         const plant = loggedInUser.plants.id(req.params.plantId);
-        res.render('plants/show.ejs', {
+        res.status(200).render('plants/show.ejs', {
             plant
         });
     } catch (error) {
@@ -98,14 +96,6 @@ router.put('/:plantId', async (req, res) => {
         res.render('error.ejs', {msg: 'An error occured. Please try again.'});
     }
 });
-
-
-
-
-
-
-
-
 
 
 module.exports = router;
