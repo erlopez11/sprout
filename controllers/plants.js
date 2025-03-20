@@ -14,6 +14,21 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/season', async (req, res) => {
+    try {
+        const loggedInUser = await User.findById(req.session.user._id);
+        console.log(req.body);
+        res.render('plants/seasonIdx.ejs', {
+            season: req.body,
+            plants: loggedInUser.plants,
+        });
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
+
+
 router.get('/new', async (req, res) => {
     res.status(200).render('plants/new.ejs');
 });
