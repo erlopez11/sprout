@@ -13,21 +13,21 @@ router.post('/sign-up', async (req, res) => {
     try {
         const userInDatabase = await User.findOne({username: req.body.username});
         if (userInDatabase) {
-            return res.render('auth/sign-up.ejs', {message: 'Username already taken'});
+            return res.status(200).render('auth/sign-up.ejs', {message: 'Username already taken'});
         }
 
         if (req.body.password !== req.body.confirmPassword) {
-            return res.render('auth/sign-up.ejs', {message: 'Password and Confirm Password must match'});
+            return res.status(200).render('auth/sign-up.ejs', {message: 'Password and Confirm Password must match'});
         }
 
         if (!req.body.password.trim() || !req.body.username.trim()) {
-            return res.render('auth/sign-up.ejs', {message: 'Input cannot be blank'});
+            return res.status(200).render('auth/sign-up.ejs', {message: 'Input cannot be blank'});
         }
 
         const hashedPassword = bcrypt.hashSync(req.body.password, 12);
         req.body.password = hashedPassword;
         await User.create(req.body);
-        return res.render('auth/sign-in.ejs', {message: 'Sign Up Successful'});
+        return res.status(200).render('auth/sign-in.ejs', {message: 'Sign Up Successful'});
 
     } catch (error) {
         console.log(error);
@@ -44,14 +44,14 @@ router.post('/sign-in', async (req, res) => {
     try {
          const userInDatabase = await User.findOne({username: req.body.username});
          if (!userInDatabase) {
-            return res.render('auth/sign-in.ejs', {message: 'Login failed. Please try again.'});
+            return res.status(200).render('auth/sign-in.ejs', {message: 'Login failed. Please try again.'});
          }
          const validPassword = bcrypt.compareSync(
             req.body.password,
             userInDatabase.password
          );
          if(!validPassword) {
-            return res.render('auth/sign-in.ejs', {message: 'Login failed. Please try again.'});
+            return res.status(200).render('auth/sign-in.ejs', {message: 'Login failed. Please try again.'});
          }
 
          req.session.user = {
