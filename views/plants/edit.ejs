@@ -13,7 +13,7 @@
     
         <form class="flex" action="/users/<%= user._id %>/plants/<%= plant._id %>?_method=PUT" method="post">
             <label for="plantName">Plant Name</label>
-            <input type="text" id="plantName" name="plantName" value="<%= plant.plantName %> required"/>
+            <input type="text" id="plantName" name="plantName" value="<%= plant.plantName %>" required/>
     
             <label for="season">Planting Season</label>
             <select id="season" name="season" required>
