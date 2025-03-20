@@ -9,7 +9,7 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
 
-    <div class="authContainer flex">
+    <div class="authContainer centeredFlexColumn flex">
         <% if (typeof message !== 'undefined') { %>
             <div class="flashMessage">
                 <p><%= message %></p>
@@ -27,7 +27,7 @@
             <label for="confirmPassword">Confirm Password:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required/>
     
-            <button type="submit" class="authBtn">Sign Up</button>
+            <button type="submit" class="authBtn colorBtn">Sign Up</button>
         </form>
     </div>
 </body>

@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <div class="newEditContainer containerMaxWidth flex">
+    <div class="newEditContainer centeredFlexColumn containerMaxWidth flex">
         <h1>Edit <%= plant.plantName %></h1>
     
         <form class="flex" action="/users/<%= user._id %>/plants/<%= plant._id %>?_method=PUT" method="post">
@@ -40,7 +40,7 @@
                 <%= plant.notes %>
             </textarea>
     
-            <button class="newEditBtn" type="submit">Update <%= plant.plantName %></button>
+            <button class="newEditBtn colorBtn" type="submit">Update <%= plant.plantName %></button>
         </form>
     </div>
 </body>

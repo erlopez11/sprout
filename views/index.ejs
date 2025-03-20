@@ -8,14 +8,14 @@
 </head>
 <body>
     <%- include('./partials/_navbar.ejs') %>
-    <div class="homeContainer containerMaxWidth flex">
+    <div class="homeContainer centeredFlexColumn containerMaxWidth flex">
         <% if (typeof message !== 'undefined') { %>
             <div class="flashMessage">
                 <p><%= message %></p>
             </div>
         <% } %>
         <img alt="plant sprouts growing inside a cardboard seed tray" src="../images/sprouts.jpg" class="homeImg">
-        <div class="homeTextContainer flex">
+        <div class="homeTextContainer centeredFlexColumn flex">
             <% if (user) { %>
                 <h1>Sprout</h1>
                 <p>A seed collection app for gardeners</p>
@@ -24,8 +24,8 @@
                 <h1>Sprout</h1>
                 <p>A seed collection app for gardeners</p>
                 <div class="homeBtnContainer flex">
-                    <a href="/auth/sign-up" class="linkBtn">Sign Up</a>
-                    <a href="/auth/sign-in" class="linkBtn signInBtn">Sign In</a>
+                    <a href="/auth/sign-up" class="colorBtn">Sign Up</a>
+                    <a href="/auth/sign-in" class="transparentBtn">Sign In</a>
                 </div>
             <% }%>
         </div>

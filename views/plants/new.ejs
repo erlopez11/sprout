@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <div class="newEditContainer containerMaxWidth flex">
+    <div class="newEditContainer centeredFlexColumn containerMaxWidth flex">
         <h1>Add A New Plant</h1>
     
         <form class="flex bold" action="/users/<%= user._id %>/plants" method="post">
@@ -38,7 +38,7 @@
             <label for="notes">Notes</label>
             <textarea id="notes" name="notes"></textarea>
     
-            <button class="newEditBtn" type="submit">Add Plant</button>
+            <button class="newEditBtn colorBtn" type="submit">Add Plant</button>
         </form>
     </div>
 </body>
