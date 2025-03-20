@@ -13,6 +13,8 @@
     --ff-body: 'Libre Franklin', serif
 }
 
+/* Base Style */
+
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +40,8 @@ img {
     display: block;
 }
 
+/* Utility Classes */
+
 .containerMaxWidth {
     --max-width: 1110px;
     --container-padding: 1.5rem;
@@ -51,40 +55,46 @@ img {
     font-weight: 600;
 }
 
+.centeredFlexColumn {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.colorBtn {
+    background-color: var(--clr-accentOne);
+    color: var(--clr-dark);
+    border-radius: 1.25rem;
+    padding: 0.5rem 3.125rem;
+    border: 0;
+    transition: 0.5s;
+}
+.colorBtn:hover {
+    background-color: var(--clr-accentTwo);
+}
+.transparentBtn {
+    background-color: transparent;
+    color: var(--clr-dark);
+    border-radius: 1.25rem;
+    border: 0.0625rem solid var(--clr-accentOne);
+    padding: 0.5rem 3.125rem;
+    transition: 0.5s;
+}
+.transparentBtn:hover {
+    background-color: var(--clr-accentTwo);
+}
 
 /* HOMEPAGE */
 
 h1 {
     font-family: var(--ff-heading);
 }
-
 .homeContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 90vh;
 }
-
 .homeImg {
     border: 0.3125rem solid var(--clr-accentTwo);
     border-radius: 50%;
     object-fit: cover;
-}
-
-.homeTextContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.linkBtn {
-    background-color: var(--clr-accentOne);
-    padding: 0.5rem 3.125rem;
-    border-radius: 1.25rem;
-    transition: 0.5s;
-}
-.linkBtn:hover {
-    background-color: var(--clr-accentTwo);
 }
 .homeBtnContainer {
     gap: 1.875rem;
@@ -92,10 +102,7 @@ h1 {
 .homeBtnContainer a {
     color: var(--clr-dark);
 }
-.signInBtn {
-    background-color: transparent;
-    border: 0.0625rem solid var(--clr-accentOne);
-}
+
 
 /* Forms */
 form {
@@ -140,24 +147,12 @@ textarea:focus {
 
 /* Sign Up/Sign In */
 .authContainer {
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
    gap: 2.5rem;
    height: 90vh;
 }
-
 .authBtn {
-    background-color: var(--clr-accentOne);
-    border-radius: 1.25rem;
-    border: none;
     padding: 0.625rem;
     margin-top: 1.25rem;
-    transition: 0.4s;
-}
-
-.authBtn:hover {
-    background-color: var(--clr-medium);
 }
 
 /* Plants Index  */
@@ -221,20 +216,10 @@ textarea:focus {
 .plantText a {
     color: var(--clr-dark);
 }
-.newBtn {
-    background-color: var(--clr-accentOne);
-    border-radius: 1.25rem;
-    transition: 0.4s;
-}
-.newBtn:hover {
-    background-color: var(--clr-accentTwo);
-}
 
 /* Show Page: Ind Plant */
+
 .showContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 90vh;
 }
 .showImg img {
@@ -250,15 +235,7 @@ textarea:focus {
     margin-top: 40px;
     gap: 15px;
 }
-.showBtn {
-    background-color: var(--clr-accentOne);
-    padding: 0.5rem 3.125rem;
-    border-radius: 1.25rem;
-    transition: 0.5s;
-}
-.showBtn:hover {
-    background-color: #cc88ff;
-}
+
 .showImg {
     justify-content: center;
     margin-bottom: 40px;
@@ -266,35 +243,16 @@ textarea:focus {
 .showText p:not(:first-child) {
     margin-top: 12px;
 }
-.deleteBtn {
-    border: none;
-    color: var(--clr-dark);
-}
 .editBtn {
-    background-color: transparent;
-    border: 0.0625rem solid var(--clr-accentOne);
-    color: var(--clr-dark);
     text-align: center;
 }
 /* New/Edit Pages */
 .newEditContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 90vh;
     gap: 2.5rem;
 }
 .newEditBtn {
-    background-color: var(--clr-accentOne);
-    color: var(--clr-dark);
-    padding: 0.5rem 3.125rem;
-    border-radius: 1.25rem;
-    transition: 0.5s;
-    border: none;
     margin-top: 25px;
-}
-.newEditBtn:hover {
-    background-color: var(--clr-accentTwo);
 }
 
 /* Season Index */
@@ -305,34 +263,21 @@ textarea:focus {
     margin-bottom: 50px;
 }
 
-/* Error Page */
+/* Error Page */  
+
 .errorContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 90vh;
     gap: 20px;
 }
-
 .errorBackBtn {
-    background-color: var(--clr-accentOne);
-    color: var(--clr-dark);
-    padding: 0.5rem 3.125rem;
-    border-radius: 1.25rem;
-    transition: 0.5s;
-    border: none;
     margin-top: 25px;
 }
-.errorBackBtn:hover {
-    background-color: var(--clr-accentTwo);
-}
-
 .errorImg {
     border-radius: 50%;
-
 }
 
-/* Flash Message */
+/* Flash Message */ 
+
 .flashMessage {
     background-color: var(--clr-accentTwo);
     padding: 12px;
@@ -380,12 +325,14 @@ textarea:focus {
     }
     .newBtn {
         font-size: 12px;
-        padding: 5px 25px;
     }
     .showImg img,
     .errorImg {
         width: 50%;
         aspect-ratio: 1;
+    }
+    .showBtnsContainer {
+        flex-direction: column;
     }
     .showBtn {
         font-size: 12px;
@@ -418,16 +365,10 @@ textarea:focus {
     .plantCardContainer {
         gap: 40px;
     }
-    .newBtn {
-        padding: 8px 30px;
-    }
     .showImg img,
     .errorImg {
         width: 300px;
         aspect-ratio: 1;
-    }
-    .showText {
-        flex-direction: column;
     }
     .showBtnsContainer {
         justify-content: center;
