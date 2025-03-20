@@ -13,21 +13,25 @@ router.post('/sign-up', async (req, res) => {
     try {
         const userInDatabase = await User.findOne({username: req.body.username});
         if (userInDatabase) {
-            return res.send('Username already taken');
+            return res.render('auth/sign-up.ejs', {message: 'Username already taken'});
         }
 
         if (req.body.password !== req.body.confirmPassword) {
-            return res.send('Password and Confirm Password must match');
+            return res.render('auth/sign-up.ejs', {message: 'Password and Confirm Password must match'});
+        }
+
+        if (!req.body.password.trim() || !req.body.username.trim()) {
+            return res.render('auth/sign-up.ejs', {message: 'Input cannot be blank'});
         }
 
         const hashedPassword = bcrypt.hashSync(req.body.password, 12);
         req.body.password = hashedPassword;
-
         await User.create(req.body);
+        return res.render('auth/sign-in.ejs', {message: 'Sign Up Successful'});
 
-        res.redirect('auth/sign-in.ejs');
     } catch (error) {
         console.log(error);
+        req.session.message = 'An error occured. Try again.'
         res.redirect('/');
     }
 });
@@ -40,14 +44,14 @@ router.post('/sign-in', async (req, res) => {
     try {
          const userInDatabase = await User.findOne({username: req.body.username});
          if (!userInDatabase) {
-            return res.send('Login failed. Please try again.');
+            return res.render('auth/sign-in.ejs', {message: 'Login failed. Please try again.'});
          }
          const validPassword = bcrypt.compareSync(
             req.body.password,
             userInDatabase.password
          );
          if(!validPassword) {
-            return res.send('Login failed. Please try again.');
+            return res.render('auth/sign-in.ejs', {message: 'Login failed. Please try again.'});
          }
 
          req.session.user = {
