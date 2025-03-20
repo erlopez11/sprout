@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Plant By Season</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="seasonIdx containerMaxWidth flex">
+        <h1>Plant By Season</h1>
+        <div class="plantIdxContainer flex">
+            <section class="plantIdxSection">
+                <h2>Summer</h2>
+                <ul class="plantCardContainer">
+                    <% plants.forEach(plant => { %>
+                        <% if (plant.season === 'summer') { %>
+                            <li class="card">
+                                <div class="plantImg">
+                                    <% if (plant.plantType === 'herb') { %>
+                                        <img src="/images/herbs.jpg" alt="herbs growing in carton planters">
+                                    <% } else if (plant.plantType === 'veggie') { %>
+                                        <img src="/images/veggie.jpg" alt="tomaoes in crate">
+                                    <% } else if (plant.plantType === 'fruit') { %>
+                                        <img src="/images/fruit.jpg" alt="strawberries hanging from planter">
+                                    <% } else if (plant.plantType === 'flower') { %>
+                                        <img src="/images/flowers.jpg" alt="groups of flowers in the sunlight">
+                                    <% }else if (plant.plantType === 'other') { %>
+                                        <img src="/images/other.jpg" alt="a garden box with herbs and lettuce">
+                                    <% } %>
+                                </div>
+                                <div class="plantText">
+                                    <h3>
+                                        <a href="/users/<%= user._id %>/plants/<%= plant._id %>"><%= plant.plantName %></a>
+                                    </h3>
+                                </div>
+                            </li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+            </section>
+            <section class="plantIdxSection">
+                <h2>Fall</h2>
+                <ul class="plantCardContainer">
+                    <% plants.forEach(plant => { %>
+                        <% if (plant.season === 'fall') { %>
+                            <li class="card">
+                                <div class="plantImg">
+                                    <% if (plant.plantType === 'herb') { %>
+                                        <img src="/images/herbs.jpg" alt="herbs growing in carton planters">
+                                    <% } else if (plant.plantType === 'veggie') { %>
+                                        <img src="/images/veggie.jpg" alt="tomaoes in crate">
+                                    <% } else if (plant.plantType === 'fruit') { %>
+                                        <img src="/images/fruit.jpg" alt="strawberries hanging from planter">
+                                    <% } else if (plant.plantType === 'flower') { %>
+                                        <img src="/images/flowers.jpg" alt="groups of flowers in the sunlight">
+                                    <% }else if (plant.plantType === 'other') { %>
+                                        <img src="/images/other.jpg" alt="a garden box with herbs and lettuce">
+                                    <% } %>
+                                </div>
+                                <div class="plantText">
+                                    <h3>
+                                        <a href="/users/<%= user._id %>/plants/<%= plant._id %>"><%= plant.plantName %></a>
+                                    </h3>
+                                </div>
+                            </li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+            </section>
+            <section class="plantIdxSection">
+                <h2>Winter</h2>
+                <ul class="plantCardContainer">
+                    <% plants.forEach(plant => { %>
+                        <% if (plant.season === 'winter') { %>
+                            <li class="card">
+                                <div class="plantImg">
+                                    <% if (plant.plantType === 'herb') { %>
+                                        <img src="/images/herbs.jpg" alt="herbs growing in carton planters">
+                                    <% } else if (plant.plantType === 'veggie') { %>
+                                        <img src="/images/veggie.jpg" alt="tomaoes in crate">
+                                    <% } else if (plant.plantType === 'fruit') { %>
+                                        <img src="/images/fruit.jpg" alt="strawberries hanging from planter">
+                                    <% } else if (plant.plantType === 'flower') { %>
+                                        <img src="/images/flowers.jpg" alt="groups of flowers in the sunlight">
+                                    <% }else if (plant.plantType === 'other') { %>
+                                        <img src="/images/other.jpg" alt="a garden box with herbs and lettuce">
+                                    <% } %>
+                                </div>
+                                <div class="plantText">
+                                    <h3>
+                                        <a href="/users/<%= user._id %>/plants/<%= plant._id %>"><%= plant.plantName %></a>
+                                    </h3>
+                                </div>
+                            </li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+            </section>
+            <section class="plantIdxSection">
+                <h2>Spring</h2>
+                <ul class="plantCardContainer">
+                    <% plants.forEach(plant => { %>
+                        <% if (plant.season === 'spring') { %>
+                            <li class="card">
+                                <div class="plantImg">
+                                    <% if (plant.plantType === 'herb') { %>
+                                        <img src="/images/herbs.jpg" alt="herbs growing in carton planters">
+                                    <% } else if (plant.plantType === 'veggie') { %>
+                                        <img src="/images/veggie.jpg" alt="tomaoes in crate">
+                                    <% } else if (plant.plantType === 'fruit') { %>
+                                        <img src="/images/fruit.jpg" alt="strawberries hanging from planter">
+                                    <% } else if (plant.plantType === 'flower') { %>
+                                        <img src="/images/flowers.jpg" alt="groups of flowers in the sunlight">
+                                    <% }else if (plant.plantType === 'other') { %>
+                                        <img src="/images/other.jpg" alt="a garden box with herbs and lettuce">
+                                    <% } %>
+                                </div>
+                                <div class="plantText">
+                                    <h3>
+                                        <a href="/users/<%= user._id %>/plants/<%= plant._id %>"><%= plant.plantName %></a>
+                                    </h3>
+                                </div>
+                            </li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>
