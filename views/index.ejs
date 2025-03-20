@@ -9,6 +9,11 @@
 <body>
     <%- include('./partials/_navbar.ejs') %>
     <div class="homeContainer containerMaxWidth flex">
+        <% if (typeof message !== 'undefined') { %>
+            <div class="flashMessage">
+                <p><%= message %></p>
+            </div>
+        <% } %>
         <img alt="plant sprouts growing inside a cardboard seed tray" src="../images/sprouts.jpg" class="homeImg">
         <div class="homeTextContainer flex">
             <% if (user) { %>
@@ -25,7 +30,5 @@
             <% }%>
         </div>
     </div>
-
-
 </body>
 </html>
