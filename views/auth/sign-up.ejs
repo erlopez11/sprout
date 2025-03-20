@@ -8,18 +8,24 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+
     <div class="authContainer flex">
+        <% if (typeof message !== 'undefined') { %>
+            <div class="flashMessage">
+                <p><%= message %></p>
+            </div>
+        <% } %>
         <h1>Join Sprout</h1>
     
         <form action="/auth/sign-up" method="post" class="flex">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username"/>
+            <input type="text" id="username" name="username" required/>
     
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"/>
+            <input type="password" id="password" name="password" required/>
     
             <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword"/>
+            <input type="password" id="confirmPassword" name="confirmPassword" required/>
     
             <button type="submit" class="authBtn">Sign Up</button>
         </form>
